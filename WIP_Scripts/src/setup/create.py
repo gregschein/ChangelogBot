@@ -1,7 +1,7 @@
 from db import get_connection
 import json
 
-def create_database():
+def create_database():              #pass it a
     with open('config/config.json') as data:
         cfg = json.load(data)
     db = get_connection()

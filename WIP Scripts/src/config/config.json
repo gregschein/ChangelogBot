@@ -1,8 +1,0 @@
-{
-	"database": {
-		"host": "localhost",
-		"username": "root",
-		"password": "admin",
-		"db": "db_testing"
-	}
-}

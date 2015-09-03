@@ -1,0 +1,445 @@
+{
+	"heroes": [
+		{
+			"name": "abbadon",
+			"description": ""
+		},
+		{
+			"name": "alchemist",
+			"description": ""
+		},
+		{
+			"name": "ancient apparition",
+			"description": ""
+		},
+		{
+			"name": "anti-mage",
+			"description": ""
+		},
+		{
+			"name": "axe",
+			"description": ""
+		},
+		{
+			"name": "bane",
+			"description": ""
+		},
+		{
+			"name": "batrider",
+			"description": ""
+		},
+		{
+			"name": "beastmaster",
+			"description": ""
+		},
+		{
+			"name": "bloodseeker",
+			"description": ""
+		},
+		{
+			"name": "bounty hunter",
+			"description": ""
+		},
+		{
+			"name": "brewmaster",
+			"description": ""
+		},
+		{
+			"name": "bristleback",
+			"description": ""
+		},
+		{
+			"name": "broodmother",
+			"description": ""
+		},
+		{
+			"name": "centaur warrunner",
+			"description": ""
+		},
+		{
+			"name": "chaos knight",
+			"description": ""
+		},
+		{
+			"name": "chen",
+			"description": ""
+		},
+		{
+			"name": "clinkz",
+			"description": ""
+		},
+		{
+			"name": "clockwerk",
+			"description": ""
+		},
+		{
+			"name": "crystal maiden",
+			"description": ""
+		},
+		{
+			"name": "dark seer",
+			"description": ""
+		},
+		{
+			"name": "dazzle",
+			"description": ""
+		},
+		{
+			"name": "death prophet",
+			"description": ""
+		},
+		{
+			"name": "disruptor",
+			"description": ""
+		},
+		{
+			"name": "doom",
+			"description": ""
+		},
+		{
+			"name": "dragon knight",
+			"description": ""
+		},
+		{
+			"name": "drow ranger",
+			"description": ""
+		},
+		{
+			"name": "earth spirit",
+			"description": ""
+		},
+		{
+			"name": "earthshaker",
+			"description": ""
+		},
+		{
+			"name": "elder titan",
+			"description": ""
+		},
+		{
+			"name": "ember spirit",
+			"description": ""
+		},
+		{
+			"name": "enchantress",
+			"description": ""
+		},
+		{
+			"name": "enigma",
+			"description": ""
+		},
+		{
+			"name": "faceless void",
+			"description": ""
+		},
+		{
+			"name": "gyrocopter",
+			"description": ""
+		},
+		{
+			"name": "huskar",
+			"description": ""
+		},
+		{
+			"name": "invoker",
+			"description": ""
+		},
+		{
+			"name": "io",
+			"description": ""
+		},
+		{
+			"name": "jakiro",
+			"description": ""
+		},
+		{
+			"name": "juggernaut",
+			"description": ""
+		},
+		{
+			"name": "keeper of the light",
+			"description": ""
+		},
+		{
+			"name": "kunkka",
+			"description": ""
+		},
+		{
+			"name": "legion commander",
+			"description": ""
+		},
+		{
+			"name": "leshrac",
+			"description": ""
+		},
+		{
+			"name": "lich",
+			"description": ""
+		},
+		{
+			"name": "lifestealer",
+			"description": ""
+		},
+		{
+			"name": "lina",
+			"description": ""
+		},
+		{
+			"name": "lion",
+			"description": ""
+		},
+		{
+			"name": "lone druid",
+			"description": ""
+		},
+		{
+			"name": "luna",
+			"description": ""
+		},
+		{
+			"name": "lycan",
+			"description": ""
+		},
+		{
+			"name": "magnus",
+			"description": ""
+		},
+		{
+			"name": "medusa",
+			"description": ""
+		},
+		{
+			"name": "meepo",
+			"description": ""
+		},
+		{
+			"name": "mirana",
+			"description": ""
+		},
+		{
+			"name": "morphling",
+			"description": ""
+		},
+		{
+			"name": "naga siren",
+			"description": ""
+		},
+		{
+			"name": "nature's prophet",
+			"description": ""
+		},
+		{
+			"name": "necrophos",
+			"description": ""
+		},
+		{
+			"name": "night stalker",
+			"description": ""
+		},
+		{
+			"name": "nyx assasin",
+			"description": ""
+		},
+		{
+			"name": "ogre magi",
+			"description": ""
+		},
+		{
+			"name": "omniknight",
+			"description": ""
+		},
+		{
+			"name": "oracle",
+			"description": ""
+		},
+		{
+			"name": "outworld devourer",
+			"description": ""
+		},
+		{
+			"name": "phantom assasin",
+			"description": ""
+		},
+		{
+			"name": "phantom lancer",
+			"description": ""
+		},
+		{
+			"name": "phoenix",
+			"description": ""
+		},
+		{
+			"name": "puck",
+			"description": ""
+		},
+		{
+			"name": "pudge",
+			"description": ""
+		},
+		{
+			"name": "pugna",
+			"description": ""
+		},
+		{
+			"name": "queen of pain",
+			"description": ""
+		},
+		{
+			"name": "razor",
+			"description": ""
+		},
+		{
+			"name": "riki",
+			"description": ""
+		},
+		{
+			"name": "rubick",
+			"description": ""
+		},
+		{
+			"name": "sand king",
+			"description": ""
+		},
+		{
+			"name": "shadow demon",
+			"description": ""
+		},
+		{
+			"name": "shadow fiend",
+			"description": ""
+		},
+		{
+			"name": "shadow shaman",
+			"description": ""
+		},
+		{
+			"name": "silencer",
+			"description": ""
+		},
+		{
+			"name": "skywrath mage",
+			"description": ""
+		},
+		{
+			"name": "slardar",
+			"description": ""
+		},
+		{
+			"name": "slark",
+			"description": ""
+		},
+		{
+			"name": "sniper",
+			"description": ""
+		},
+		{
+			"name": "spectre",
+			"description": ""
+		},
+		{
+			"name": "spirit breaker",
+			"description": ""
+		},
+		{
+			"name": "storm spirit",
+			"description": ""
+		},
+		{
+			"name": "sven",
+			"description": ""
+		},
+		{
+			"name": "techies",
+			"description": ""
+		},
+		{
+			"name": "templar assasin",
+			"description": ""
+		},
+		{
+			"name": "terrorblade",
+			"description": ""
+		},
+		{
+			"name": "tidehunter",
+			"description": ""
+		},
+		{
+			"name": "timbersaw",
+			"description": ""
+		},
+		{
+			"name": "tinker",
+			"description": ""
+		},
+		{
+			"name": "tiny",
+			"description": ""
+		},
+		{
+			"name": "treant protector",
+			"description": ""
+		},
+		{
+			"name": "troll warlord",
+			"description": ""
+		},
+		{
+			"name": "tusk",
+			"description": ""
+		},
+		{
+			"name": "undying",
+			"description": ""
+		},
+		{
+			"name": "ursa",
+			"description": ""
+		},
+		{
+			"name": "vengeful spirit",
+			"description": ""
+		},
+		{
+			"name": "venomancer",
+			"description": ""
+		},
+		{
+			"name": "viper",
+			"description": ""
+		},
+		{
+			"name": "visage",
+			"description": ""
+		},
+		{
+			"name": "warlock",
+			"description": ""
+		},
+		{
+			"name": "weaver",
+			"description": ""
+		},
+		{
+			"name": "windranger",
+			"description": ""
+		},
+		{
+			"name": "winter wyvern",
+			"description": ""
+		},
+		{
+			"name": "witch doctor",
+			"description": ""
+		},
+		{
+			"name": "wraith king",
+			"description": ""
+		},
+		{
+			"name": "zeus",
+			"description": ""
+		}
+	]
+}
+

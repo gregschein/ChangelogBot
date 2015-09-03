@@ -1,9 +1,11 @@
-from setup.migration import migrate
-from setup.seed import seed_heroes, seed_patch
-from setup.teardown import teardown_db
-from setup.create import create_database
-from query import comment_to_query
-from db import get_db
+from src.setup.migration import migrate
+from src.setup.seed import seed_heroes, seed_patch
+from src.setup.teardown import teardown_db
+from src.setup.create import create_database
+from src.query import comment_to_query
+from src.db import get_db
+from scripts.build import build
+from scripts.reset import reset
 
 class Testing():
     def __init__(self):
@@ -39,6 +41,12 @@ class Testing():
                 continue
             if CHOICE == "create":
                 create_database()
+                continue
+            if CHOICE == "build":
+                build()
+                continue
+            if CHOICE == "reset":
+                reset()
                 continue
             if CHOICE == "end":
                 break

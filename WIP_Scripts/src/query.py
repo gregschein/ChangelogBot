@@ -31,10 +31,10 @@ def get_ids(database, query_string, query_args):
 
     cursor = database.cursor()
 
-    cursor.execute(query_string[0], query_args[0])
+    cursor.execute(query_hero[0], query_hero[1])
     hero_id = cursor.fetchone()
 
-    cursor.execute(query_string[1], query_args[1])
+    cursor.execute(query_patch[0], query_patch[1])
     patch_id = cursor.fetchall()
 
     return(hero_id, patch_id)

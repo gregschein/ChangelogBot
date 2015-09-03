@@ -1,4 +1,4 @@
-from db import get_connection
+from src.db import get_connection
 import json
 
 CONNECTION = get_connection()

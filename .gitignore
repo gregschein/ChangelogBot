@@ -1,2 +1,5 @@
-WIP_Scripts/config/config.json
-WIP_Scripts/tests/__pycache__/*
+config/*
+tests/__pycache__/*
+oauth.ini
+oauth.txt
+

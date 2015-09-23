@@ -42,7 +42,8 @@ def get_changelog(database, hero_id, patch_id):
 
     cursor = database.cursor()
 
-    statement = "SELECT Description, Patch_Id FROM Heroes_Patchnotes WHERE Hero_Id = %s AND Patch_Id IN %s ORDER BY Patch_Id"
+    # statement = "SELECT Description, Patch_Id FROM Heroes_Patchnotes WHERE Hero_Id = %s AND Patch_Id IN %s ORDER BY Patch_Id"
+    statement = "SELECT Heroes_Patchnotes.Description, Patch.Patch FROM Heroes_Patchnotes LEFT JOIN Patch on Heroes_Patchnotes.Patch_Id = Patch.id WHERE Heroes_Patchnotes.Hero_Id = %s AND Heroes_Patchnotes.Patch_Id IN %s"
     cursor.execute(statement, (hero_id, patch_id))
     changelog = cursor.fetchall()
     return changelog

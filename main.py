@@ -18,9 +18,9 @@ REDIRECT_URI = config.get("Reddit", "redirect_uri")
 
 r=praw.Reddit(USERAGENT)
 r.login(USERNAME, PASSWORD)
-# r.set_oauth_app_info(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, redirect_uri=REDIRECT_URI)
-o = OAuth2Util.OAuth2Util(r)
-o.refresh()
+r.set_oauth_app_info(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, redirect_uri=REDIRECT_URI)
+# o = OAuth2Util.OAuth2Util(r)
+# o.refresh()
 # subreddit = r.get_subreddit('dota2')
 
 DONE = []
@@ -28,7 +28,6 @@ db = get_db()
 
 def comment_is_valid(comment):
 
-    comment = comment.replace("Changelog! ", "")
     if re.match('[a-zA-Z\s]+ \d\.\d\d[a-z]?(\-\d\.\d\d[a-z]?)?', comment):
         return True
     else:
@@ -51,29 +50,45 @@ def write_config_done(done):
             if d:
                 f.write(d + "\n")
 
+def reply_to_comment(comment, changelog, hero_name):
+    patch_template = "**{0}**\n\n"
+    changes_template = "* {0}\n\n"
+    reply = hero_name.title() + "\n____\n"
+    for patch in changelog:
+        reply += patch_template.format(patch[1])
+        storage = patch[0].split(". ")
+        for change in storage:
+            reply += changes_template.format(change)
+    comment.reply(reply)
+
 def main_loop():
 
     while True:
         done = read_config_done()
         new_done = []
         
-        try:
-            for comment in r.get_comments("dota2", limit=None):
-                if "dota" in comment.body and comment.id not in done:
-                    # match = comment_is_valid(comment.body)
-                    # query = comment_to_query(match)
-                    # ids = get_ids(db, query[0], query[1])
-                    # changelog = get_changelog(db, ids[0], ids[1])
-                    # print changelog
-                    print comment.body
+        # try:
+        for comment in r.get_comments("test", limit=None):
+            if "Changelog!" in comment.body and comment.id not in done:
+                comment_info = comment.body.replace("Changelog! ", "")
+                match = comment_is_valid(comment_info)
+                if match:
+                    query = comment_to_query(comment_info)
+                else:
                     new_done.append(comment.id)
-            write_config_done(new_done)
-            print "looped"
-            time.sleep(30)
+                    continue
+                hero_name = query[0][1][0]
+                ids = get_ids(db, query[0], query[1])
+                changelog = get_changelog(db, ids[0], ids[1])
+                reply_to_comment(comment, changelog, hero_name)
+                new_done.append(comment.id)
+        write_config_done(new_done)
+        time.sleep(30)
+        print "looped"
+        # except Exception, e:
+        #     print e
+        #     time.sleep(30)
 
-        except:
-            print "looped except"
-            time.sleep(30)
 
 if __name__ == "__main__":
     main_loop()

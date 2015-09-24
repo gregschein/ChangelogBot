@@ -3,11 +3,12 @@ def comment_to_query(comment):
     """Takes in comment, returns query values to find database entry Ids"""
 
     splitcomment = comment.split()
-    #if len(splitcomment) != 2:
-        #some error.
-    hero_name = splitcomment[0].lower()
-    patch_range = splitcomment[1].split('-')
+    patch_range = splitcomment.pop().split('-')
     patch_range.sort(key=float)
+    hero_name = ""
+    for word in splitcomment:
+        hero_name += word + " "
+    hero_name += "\b"
 
     query_hero = ["SELECT Id FROM Heroes WHERE Name = %s"]
     query_hero.append((hero_name,))
@@ -43,7 +44,7 @@ def get_changelog(database, hero_id, patch_id):
     cursor = database.cursor()
 
     # statement = "SELECT Description, Patch_Id FROM Heroes_Patchnotes WHERE Hero_Id = %s AND Patch_Id IN %s ORDER BY Patch_Id"
-    statement = "SELECT Heroes_Patchnotes.Description, Patch.Patch FROM Heroes_Patchnotes LEFT JOIN Patch on Heroes_Patchnotes.Patch_Id = Patch.id WHERE Heroes_Patchnotes.Hero_Id = %s AND Heroes_Patchnotes.Patch_Id IN %s"
+    statement = "SELECT Heroes_Patchnotes.Description, Patch.Patch FROM Heroes_Patchnotes LEFT JOIN Patch on Heroes_Patchnotes.Patch_Id = Patch.id WHERE Heroes_Patchnotes.Hero_Id = %s AND Heroes_Patchnotes.Patch_Id IN %s ORDER BY Heroes_Patchnotes.Patch_Id"
     cursor.execute(statement, (hero_id, patch_id))
     changelog = cursor.fetchall()
     return changelog

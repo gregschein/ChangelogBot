@@ -66,12 +66,16 @@ def write_config_done(done):
 def reply_to_comment(comment, changelog, hero_name):
     patch_template = "**{0}**\n\n"
     changes_template = "* {0}\n\n"
-    reply = hero_name.title() + "\n____\n"
-    for patch in changelog:
-        reply += patch_template.format(patch[1])
-        storage = patch[0].split(". ")
-        for change in storage:
-            reply += changes_template.format(change)
+    reply = "**" + hero_name.title() + "**\n____\n"
+    if not changelog:
+        reply += "No changes."
+    else:
+        for patch in changelog:
+            reply += patch_template.format(patch[1])
+            storage = patch[0].split(". ")
+            for change in storage:
+                reply += changes_template.format(change)
+    reply += "____\n ^(If you have any issues, message /u/other_name_was_taken. He probably messed something up.)"
     comment.reply(reply)
 
 def main_loop():
@@ -81,7 +85,7 @@ def main_loop():
         new_done = []
         try:
             oauth_helper.refresh()
-            for comment in r.get_comments("test", limit=None):
+            for comment in r.get_comments("dota2", limit=None):
                 if "Changelog!" in comment.body and comment.id not in done:
                     comment_info = comment.body.replace("Changelog! ", "")
                     match = comment_is_valid(comment_info)
@@ -95,9 +99,7 @@ def main_loop():
                     new_done.append(comment.id)
                     done.append(comment.id)
             write_config_done(new_done)
-            print "before sleep"
-            time.sleep(5)
-            print "looped"
+            time.sleep(30)
         except praw.errors.OAuthInvalidToken:
             print "fuck 2"
             oauth_helper.refresh()
